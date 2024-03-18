@@ -1,0 +1,636 @@
+*{
+    /*color mode HSL(hue, saturation lightness)*/
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+:root{
+  --hue: 207;
+  --sat: 90%;
+  --lig: 61%;
+
+
+  --box-shadow: 7px 5px 10px 7px rgba(0, 0, 0, 0.9), 0 7px 21px 0 rgba(0, 0, 0, 0.90);
+  --blue: rgb(5, 145, 82);
+  --light: rgb(79, 142, 114);
+  --lighter: rgb(162, 180, 197);
+
+  --first-color: hsl(var(--hue), var(--sat), var(--lig)) ;
+  --first-color-alt:hsl(var(--hue), var(--sat), 57%); 
+  --tittle-color: hsl(var(--hue), 12%, 15%);
+  --text-color: hsl(var(--hue), 12%, 45%);
+  --text-color-light: hsl(var(--hue), 8%, 75%);
+  --text-color-lighten: hsl(var(--hue), 8%, 92%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #fff;
+  
+
+  
+/*
+=========================font and typography==================
+.rem = 8px  | 1rem = 16px ...
+*/
+  --body-font: verdana;
+  --biggest: 2rem;
+  --bigger: 1.5rem;
+  --normal: 1rem;
+  --small: .813rem;
+  --small: .7rem;
+
+}
+i{
+ padding: 3px;
+}
+.fa-bars,
+.fa-user{
+    font-size: 1.7rem;
+    margin: .6rem;
+}
+ul{
+    list-style: none;
+}
+.btn{
+    text-transform: uppercase;
+    padding: .8rem 2.5rem;
+    background: var(--blue);
+    color: white;
+    border-radius: 11px;
+    cursor: pointer;
+    height: 3rem;
+    
+}
+.btn:hover{
+    transform: scale(1.01);
+    background: #000;
+    color: white;
+}
+.tittle{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.tittle h1{
+   font-size: 3rem;
+}
+.tittle span{
+    font-size: 3rem;
+    text-transform: uppercase;
+    line-height: 2;
+    color: var(--blue);    
+}
+input,
+textarea,
+select{
+    outline: none;
+    border: 1px solid #55555544;
+    background: transparent;
+    width: 85%;
+    padding: 1rem 1.5rem;
+    border-radius: 11px;
+
+}
+.message{
+    cursor: pointer;
+    text-align: center;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: .6rem;
+    padding-top: .6rem;
+    color: white;
+    height: 2rem;
+    border-radius: 6px;
+    background: var(--blue); 
+    position: relative;
+    
+}
+.empty{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem; 
+
+}
+button{
+    cursor: pointer;
+
+}
+input[type=submit] {
+    cursor: pointer;
+    transition: 1.1s;
+    
+} 
+input[type=submit]:hover{
+    background: #000;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+a{
+  text-decoration: none;
+}
+.empty{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    padding-top: .6rem;
+    color: white;
+    height: 2rem;
+    border-radius: 6px;
+    background: var(--blue); 
+    position: relative;
+    margin: 1rem;
+}
+.cancel2,
+.cancelx{
+    border: none;
+    background: transparent;
+    color: rgb(243, 242, 248);
+    position: absolute;
+    right: 1rem;
+    top: .6rem;
+}
+/*--------------------------------------form comtainer-----------------------------------*/
+
+
+.container{ 
+    background: var(--blue);
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem 0;
+
+}
+
+form{
+    width: 60%;
+    margin: 1rem auto;
+    background: var(--lighter);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+ form label{
+    text-transform: uppercase;
+    width: 100%;
+}
+input{
+    width: 85%;
+    height: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-left: 7.5%;
+    padding: 5px;
+}
+.hov{
+    color: white;
+}
+h1{
+font-size: var(--biggest);
+max-width: 100%;
+text-align: center;
+color: var(--blue);
+}
+
+
+/* ============================================================Admin Dashboard=================================================*/
+/*------------------------------banner-----------------------------------------*/
+.banner{
+ 
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    background-color: var(--blue);
+
+}
+
+
+.banner .detail{
+    padding: 7rem 0;
+    left: 35%;
+    text-align: center;
+    z-index: 200;
+}
+.banner .detail h1{
+    font-size: 4rem;
+    color: #fff;
+    text-transform: capitalize;
+}
+.banner .detail p{
+    font-size: var(--bigger);
+    line-height: 2;
+}
+.banner .detail a{
+    text-transform: uppercase;
+    color: #000;
+}
+.banner .detail span{
+    color: #fff;
+
+}
+
+
+/*=============================================HEADER=============================================*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+    transition: .4s;
+}
+header.scrolled{
+    background: #7c7171;
+    box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+
+}
+header.scrolled a:hover{
+    color: var(--blue);
+
+}
+.flex{
+    max-width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: var(--blue);
+    z-index: 1000;
+    
+     
+}
+.navbar a{
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #000;
+    text-transform: uppercase;
+}
+.navbar a:hover,
+i:hover{
+    text-decoration: none;
+    color: #fff;
+
+}
+.cancel{
+    font-size: var(--biggest);
+    border: none;
+    position: absolute;
+    right: .3rem;
+    top: 0;
+    color: var(--blue);
+    background: transparent;
+
+}
+header .icon{
+    display: flex;
+}
+header .icon img{
+    margin-left: 1.2rem;
+    font-size: 1.5rem;
+    height: 2rem;
+}
+#button,
+#button1{
+    position: absolute;
+    right: 3rem;
+    top: 1rem;
+}
+#button1{
+    display: none;
+    color: yellow;
+}
+.user-box2,
+#menu-btn{ display: none;}
+header .user-box{
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background: rgba(238, 232, 232, 0.8);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    padding: .5rem;
+    text-align: center;
+    width: 19rem;
+    transform-origin: top right;
+    line-height: 2;
+
+}
+.fa-canadian-maple-leaf{
+    font-size: 3rem;
+    color: white;
+    margin: 1rem;
+}
+.logout-btn{
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    width: 10rem;
+    height: 1.5rem;
+    border-radius: 5px;
+
+}
+/*================================================DASHBOARD=============================================*/
+.dash{
+    background: var(--blue);
+    padding: 3rem;
+    margin-top: -3.5rem;
+    position: relative;
+}
+.dash::before{
+    position: absolute;
+    content: '';
+    top: -25%;
+    left: -10px;
+    width: 225px;
+    height: 220px;
+    background-size: 225px;
+    z-index: 100;
+}
+.box_container{
+    padding: 2% 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    column-gap: 1rem; 
+    
+}
+.box{
+    background: white;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 7px;
+    margin: 1rem; 
+}
+.dash h3{
+    text-align: ce-ter;
+    font-size: 2rem;
+}
+.dash p{
+    font-size: 25px;
+    text-transform: capitalize;
+    margin: .5rem;
+}
+
+/*=============================================products========================================*/
+.dash,
+.message-container,
+.show_products,
+.user-container,
+.add-products ,
+.oder-container{
+    margin: 4rem 1rem;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--blue), rgb(157, 178, 206));
+    position: relative;
+    box-shadow: var(--box-shadow)
+}
+
+.show_products .box_container{
+    grid-template-columns: no-repeat(auto-fit, minmax(40rem,1fr));
+}
+
+.box_container .box{
+    line-height: 2;
+}
+.box_container .box img{
+     width: 100%;
+     margin-bottom: 1rem;
+}
+.edit,
+.delete{
+    color: black;
+    background: var(--blue);
+    padding: .5rem 1.5rem; 
+    text-transform: capitalize;
+    line-height: 2;
+}
+/*=================================================edit form============================================*/
+.update{
+
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    max-height: 100%;
+    background: var(--blue);
+    overflow-y: auto;
+    z-index: 1100;
+}
+.update form{
+    box-shadow: var(--box-shadow);
+    width: 50%;
+    background: #fff;
+    padding: 1rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+.update .edit
+.update .btn{
+    width: 40%;
+    cursor: pointer;
+}
+.update form img{
+    width: 60%;
+}
+/*==============================================================odders========================================*/
+.oder-container .box form{
+    background: none;
+}
+.oder-container{
+    padding: 3% 7%;
+}
+.oder-container .box_container{
+    grid-template-columns: repeat(auto-fit minmax(20rem,1fr));
+    justify-content: center;
+    align-items: flex-start;
+}
+.box_container .box{
+    text-align: left;
+    padding: 1rem 2rem;
+}
+.oder-container .box p{
+    margin-top: 1rem;
+    text-transform: capitalize;
+    color: hotpink;
+}
+.oder-container .box span{
+    color: #555;
+}
+.oder-container form{
+    text-align: center;
+    width: 100%;
+    box-shadow: none;
+}
+.oder-container form select{
+    width: 100%;
+    margin: 1rem auto;
+    padding: .5rem 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.oder-container form input{
+    border-radius: unset;
+    border: none;
+    background: var(--blue);
+    color: #000;
+    text-transform: capitalize;
+    width: 100%;
+    
+}
+.oder-container form .delete{
+     height: 2rem;
+     margin-top: 1rem;
+     width: 100%;
+     padding: 5pxrem;
+     border: none;
+     border-radius: 10px;
+}
+a{
+    cursor: pointer;
+}
+
+
+
+/*=============================================SPIN===============================*/
+#loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light);
+    z-index: 9999;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*===========================media screen============================================*/
+
+@media (max-width: 900px) {
+    #menu-btn{
+        display: block;
+}
+header .flex .navbar{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    border-top: 1px solid #000;
+    background: #fff;
+    transition: 2s ease;
+    text-align: center;
+    z-index: 9999;
+}
+.navbar a{
+    text-align: center;
+    display: block;
+    padding: .5rem;
+    margin: 2rem;
+}
+.navbar a:hover{
+    background:var(--blue);
+    border-radius: 5px;
+}
+
+.banner .detail h1{
+    font-size: 3rem;
+}
+.banner .detail p{
+    font-size: 1.25rem;
+}
+ h1{
+    font-size: 2rem;
+
+}
+.form{
+    width: 100%;
+    margin: auto;
+}
+input{
+    height: 1.5rem;
+    width: 100%;
+    margin: .5rem;
+    padding: 5px;
+    
+}
+label{
+    font-size: .8rem;
+}
+.btn{
+    height: 2rem;
+    margin: 1rem;
+}
+input[type=submit]{
+    height: 2rem;
+}
+.show_products,
+.container,
+.message-container,
+.oder-container,
+.add-products{
+    background-size: 40%;
+}
+.flox{
+    display: block;
+}
+.box_container{
+    padding: 1% 4%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    column-gap: .5rem; 
+    
+}
+.box{
+    background: white;
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 7px;
+    margin: .5rem; 
+}
+p{
+    font-size: var(--small);
+}
+h3{
+    font-size: var(--bigger);
+}
+i{
+    font-size: 1.3rem;
+}
+}
+
+
+
+
+

@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+  background: #cbdde7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(.5px)
+}
+header{
+    position: relative;
+    width: 100%;
+    height: 97vh;
+    overflow: hidden;
+    background-color: #042331;
+}
+header::before{
+    height: 100px;
+    animation: fade-slide-in 2s ease-in forwards;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,7)), url(mmcd.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom left;
+    transform: skewY(-9deg);
+    
+
+}
+i{
+  font-size: 60px;
+}
+.heading{
+  animation: fade-slide-down 4s;
+  position: absolute;
+  top: 1rem;
+  left: 20%;
+  color: #f8fcfd;
+}
+h2{
+   font-size: 25px;
+   animation: slideAnimationOpp 8s linear infinite;
+    position: absolute;
+    top: 40%;
+    color: #f3f7f8;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    font-family: sans-serif;
+}
+h3{
+  font-size: 20px;
+    color: #eff4f7;
+    position: absolute;
+    top: 50%;
+    animation: slideAnimation 8s linear infinite;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    font-family: sans-serif;
+}
+@keyframes slideAnimation {
+  0% {
+    left: -100%;
+  }
+  40% {
+    left: calc(50% - 50px); /* Adjust based on your text length */
+  }
+  45%, 55% {
+    left: calc(50% - 50px); /* Pause for 2 seconds */
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes slideAnimationOpp {
+  0% {
+    left: 100%;
+  }
+  40% {
+    left: calc(50% - 50px); /* Adjust based on your text length */
+  }
+  45%, 55% {
+    left: calc(50% - 50px); /* Pause for 2 seconds */
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+
+
+.arrow{
+    height: 3rem;
+    position: absolute;
+    bottom: 3px;
+    right: 50%;
+    background-color: rgb(241, 233, 233);
+    border-radius: 50px;
+    animation: fade-slide-up 2s ease-in forwards;
+
+
+
+}
+#button{
+    width: 100px;
+    height: 57px;
+    color: white;
+    position: absolute;
+    bottom: 30%;
+    right: 50%;
+	background-color: #042331;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s;
+    border: none;
+    animation: fade-slide-down 2s ease-in;
+}
+#button:hover{
+	transform: scale(1.5);
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+@keyframes slideText2 {
+  0%, 100% {
+    left: 0;
+  }
+  25% {
+    left: calc(50% - 100px);
+  }
+  50% {
+    left: calc(100% - 200px);
+  }
+  75% {
+    left: calc(50% - 100px);
+  }
+}
+
+
+@keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideLeft {
+    0% { transform: translateX(0); opacity: 1; }
+    50% { transform: translateX(-100%); opacity: 1; }
+    100% { transform: translateX(100); opacity: 0; }
+  }
+  
+  @keyframes slideRight {
+    0% { transform: translateX(0); opacity: 1; }
+    50% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes slide{
+    from{
+       transform: translateX(100%);
+    }
+    to{
+       transform: translateX(50%);
+    }
+}
+@keyframes slide_back{
+    from{
+       transform: translateX(0);
+    }
+    to{
+       transform: translateX(50%);
+    }
+}
+@keyframes fade-slide-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+@keyframes fade-slide-up {
+  from{
+      opacity: 0;
+      transform: translateY(4rem);
+  }
+  to{
+      opacity: 1;
+      transform: none;
+  }
+}
+  @keyframes fade-slide-down {
+    from{
+        opacity: 0;
+        transform: translateY(-10rem);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+    
+}
+
+form{
+    height: 20rem;
+    width: 25rem;
+    display: flex;
+    transform: translate(-50%, -50%);
+    
+    position: absolute;
+    left: 40%;
+    
+    border-radius: 50px;
+
+}
+.log{
+    position: absolute;
+    left: 45%;
+    color: white;
+    top: 3rem;
+}
+ a{
+    position: absolute;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid ;
+    
+
+}
+#popup{
+    display: none;
+    position: fixed;
+    top: 15rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #042331;
+    padding: 20px;
+    border: 1px solid;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+.login{
+    color: white;
+    background-color: green;
+    bottom: 3rem;
+    left: 2rem;
+    border-radius: 20px;
+    font-size: 30px;
+}
+.signup{
+    color: white;
+    background-color: orange;
+    bottom: 3rem;
+    right: 2rem;
+    border-radius: 20px;
+    font-size: 30px;
+}
+#popping{
+  color: rgb(248, 247, 247);
+  background: rgb(8, 8, 63);
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-radius: 10px;
+  font-size: 10px;
+}
+.mySlides {display: none}
+img {vertical-align: middle;
+ border-radius: 10px;
+ filter: brightness(70%);
+
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 96%;
+  border-radius: 50px;
+  position: relative;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(21, 44, 80, 0.8);
+}
+
+/* Caption text */
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.slow{
+  color: #09294e;
+  font-size: 30px;
+  background: transparent;
+  border: 2px solid #042331;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 900px) {
+  .heading{font-size: 25px;}
+  i{
+    font-size: 47px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .prev, .next,.text {font-size: 11px}
+  .heading{
+    font-size: 20px;
+  }
+  h2, h1{
+    font-size: 18px;
+  }
+  i{
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .heading{font-size: 16px;}
+  i{
+    font-size: 34px;
+  }
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  height: 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row-reverse;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  margin-right: 10px;
+}
+
+ul li a {
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+}
+

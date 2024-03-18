@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: verdana;
+
+}
+.sidebar{
+    position: absolute;
+    left: 0;
+    top: 4.5rem;
+    width: 230px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #042331;
+    transition: all .5s ease;
+
+}
+header{
+    font-size: 22px;
+    color: wheat;
+    text-align: center;
+    line-height: 70px;
+    background: #063046;
+    user-select: none;
+    position: absolute;
+    left: 100px;
+}
+.sidebar .list .itemLink{
+    display: block;
+    height: 100%;
+    line-height: 47px;
+    font-size: 19px;
+    color: white;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-top:  1px solid rgb(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+    list-style: none;
+}
+.hov{
+    background: #083f58;
+    padding-left: 25px;
+}
+.sublist1 .sublink:hover,
+.sublist2 .sublink:hover,
+.sublist3 .sublink:hover{
+    background: #042e42;
+    margin-left: 25px;
+    transition: 1.5s;
+}
+
+.item:hover .itemLink{
+    padding-left: 40px;
+    background-color: #063146;
+    transition: 1.2s;
+}
+.sublist1, .sublist2, .sublist3{
+    
+    display: none;
+    background: #001118;
+    height: auto;
+    width: 100%;
+    transition: all 2.3s;
+    
+}
+.sidebar .list .itemLink:active{
+    background: rgb(236, 236, 234);
+}
+
+.sidebar .list  .itemLink #icon{
+    margin-right: 15px;
+    color: white;
+}
+
+.sublist1 .sublink, .sublist2 .sublink, .sublist3 .sublink{
+    display: block;
+    height: 100%;
+    line-height: 33px;
+    font-size: 14px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top:  1px solid rgb(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+    list-style: none;
+    transition: all 1s;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.fa-plus, .fa-layer-group{  
+    margin-left: 5px;
+}
+.horizontal{
+    width: 100%;
+    height: 4.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #063046;
+    
+}
+
+section{
+    
+    position: absolute;
+    right: 0;
+    top: 4.5rem;
+    left: 230px;
+    max-height: 100%;
+    background: rgb(162, 167, 211);
+    overflow-y: auto;
+    
+}
+
+
+@media only screen and (max-width: 650px) {
+    .sidebar .list .itemLink {
+        font-size: 15px;
+        line-height: 35px;
+        
+    }
+    .sublist1 .sublink{
+        line-height: 30px;
+        font-size: 12px;
+    }
+     header{
+        position: absolute;
+        left: 40%;
+     }
+    .horizontal{
+        position: absolute;
+    }
+    section{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 4.5rem;
+  
+
+    }
+    .cards{
+        padding: 20px 15px;
+
+        justify-content: space-between;
+
+    }
+    .card{
+        width: 110px;
+        height: 65px;
+    }
+    .sidebar{
+     width: 150px;
+     height: 100%;
+     position: absolute;
+     left: -150px;
+
+    }
+    .content{
+       position: absolute;
+       width: 100%;
+
+    }
+
+
+    #check{
+        display: none;
+    
+    }
+    label #btn, label #cancel{
+        position: absolute;
+        cursor: pointer;
+        background: #042331;
+        border-radius: 3px;
+    }
+    label #btn{
+        left: 30px;
+        top: 10px;
+        font-size: 40px;
+        color: white;
+        padding: 6px 12px;
+        transition: all .5s;
+    }
+    label #btn:hover{
+        background: #063146;
+    }
+    label #cancel{
+        left: -145px;
+        top: 18px;
+        z-index: 111;
+        font-size: 30px;
+        color: #0a5275;
+        padding: 4px 9px;
+        transition: all .5s;    
+    }
+    label #cancel:hover{
+        background: #316d8b;
+    }
+    #check:checked ~ .sidebar{
+        left: 0;
+    }
+    #check:checked ~ label #btn{
+        left: 150px;
+        opacity: 0;
+        pointer-events: none;
+    
+    }
+    #check:checked ~ label #cancel{
+        left: 110px;
+    }
+    section{
+        background-position: cover;
+        height: 100vh;
+        transition: all .5s;
+    }
+    #check:checked ~ .content{
+        margin-left: 230px;
+    }
+    #check:checked ~ section{
+        margin-left: 150px;
+    }
+}

@@ -1,0 +1,65 @@
+.container{
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow:  4px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 ;
+}
+.label{
+    font-size: 18px;
+    color: rgb(163, 153, 153);
+    padding: 5px;
+}
+ .inpu, input{
+    width: 90%;
+    height: 1.8rem;
+    border: none;
+    border-bottom: 3.5px solid #1a155c;
+    background: rgb(206, 205, 219);
+    border-radius: 20px;
+    text-align: center;
+}
+.btns{
+    margin: 1rem;
+    display: flex;   
+}
+.save{
+    height: 3rem;
+    background: rgb(27, 25, 126);
+    border: none;
+    margin-right: 3px;
+    width: 7rem;
+    border-radius: 10px;
+    color: white;
+}
+.save:hover{
+    transform: scale(1.2);
+}
+.back{
+    height: 3rem;
+    background: rgb(241, 60, 5);
+    border: none;
+    margin-right: 3px;
+    width: 4rem;
+    border-radius: 10px;
+    color: white;
+}
+.back:hover{
+    transform: scale(1.2);
+}
+.haed{
+    color: gray;
+    margin: 1rem;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.top-right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem;
+}
+.home, .pro{
+    color: rgb(112, 109, 109);
+    margin-right: 3px;
+}

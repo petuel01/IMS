@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="\ims\css\ims.css">
+    <link rel="stylesheet" href="\ims\source\fontawesome-free-5.15.4-web\fontawesome-free-5.15.4-web\css\all.css">
+</head>
+<body>
+    <header>
+       <div class="logo"></div>
+       <h1 class="heading"><i class="fas fa-shopping-cart"></i>INVENTORY MANAGEMENT SYSTEM</h1>
+       <h3 class="text">TRACK YOUR PRODUCTS</h3>
+       <button id="button">Get Started</button>
+       <h2 class="text">FREE YOU BUSINES TO GROW WITH NO FEAR</h2>
+       <img src="arrow.png" class="arrow">
+    </header>
+
+    <form id="popup">
+        <h1 class="log">ims</h1>
+       <a href="form.html" class="login">Login</a>
+       <a href="register.html" class="signup">SignUp</a>
+       <button id="popping">close</button>
+    </form>
+    <script>
+        // Get references to the button and the popup form
+        const openButton = document.getElementById('button');
+        const popupForm = document.getElementById('popup');
+        const closeButton = document.getElementById('popping');
+    
+        // Add event listener to open the popup form when the button is clicked
+        openButton.addEventListener('click', function() {
+          popupForm.style.display = 'block';
+        });
+    
+        // Add event listener to close the popup form when the close button is clicked
+        closeButton.addEventListener('click', function() {
+          popupForm.style.display = 'none';
+        });
+
+</script>
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="ivmm (2).jpg" style="width:100%">
+    <h2 class="slow">Boost Eficiency and Accuracy </h2>
+    <h3 class="slow">whith our Inventory Management Solutions</h3>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="pointing.png" style="width:100%">
+    <h2 class="slow">Unleash the Power of Data-Driven </h2>
+    <h3 class="slow" >Inventory Control</h3>
+    <button id="button" style="background: orange;">Join Us</button>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="Inventory.jpg" style="width:100%">
+    <h2 class="slow">Maximize Production and Minimize Errors</h2>
+    <h3 class="slow">with Our Inventory Solutions</h3>
+  </div>
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+       <div id="animatedElement">cvvcv</div>
+    <script>
+      const element = document.getElementById('animatedElement');
+      let position = 0;
+  
+      function animate() {
+        position += 1;
+        element.style.left = position + 'px';
+        requestAnimationFrame(animate);
+      }
+  
+      requestAnimationFrame(animate);
+    </script>
+  
+    <footer>
+    <div class="footer-content">
+      <p> 2022 Your Company</p>
+      <ul>
+        <li>hi</li>
+        <li>hafar</li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

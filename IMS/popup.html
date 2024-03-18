@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Form Example</title>
+  <style>
+    /* CSS for the popup form */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <button id="openPopup">Open Popup Form</button>
+
+  <div id="popupForm" class="popup">
+    <h2>Popup Form</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email">
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <button id="closePopup">Close</button>
+  </div>
+
+  <script>
+    // Get references to the button and the popup form
+    const openButton = document.getElementById('openPopup');
+    const popupForm = document.getElementById('popupForm');
+    const closeButton = document.getElementById('closePopup');
+
+    // Add event listener to open the popup form when the button is clicked
+    openButton.addEventListener('click', function() {
+      popupForm.style.display = 'block';
+    });
+
+    // Add event listener to close the popup form when the close button is clicked
+    closeButton.addEventListener('click', function() {
+      popupForm.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

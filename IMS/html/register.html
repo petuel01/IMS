@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1">
+<link rel="stylesheet"href="\ims\css\form.css">
+</head>
+<body>
+    <div class="bg_image">
+      <h2 class="wel">WELCOME</h2>
+      <h1 class="wel">IMS</h1>
+    <div class="center">
+     <h1>Register</h1>
+     <form id="registrationForm" action="/ims/php/register.php" method="post">
+     <div class="text_field">
+        <input type="text" name="username" id="username" required>
+        <span></span>
+        <label>username</label> 
+     </div>
+     <div class="text_field">
+        <input type="email" name="email" id="email" required >
+        <span></span>
+        <label>email</label>
+     </div>
+     <div class="text_field" >
+        <input type="password" name="password" id="password" required>
+        <span></span>
+        <label>password</label>
+     </div>
+    <button type="submit">Register</button>
+     <div class="signup_link">
+        Already a member?<a href="form.html">Login instead</a>
+     </div>
+    </div>
+    </div>
+    <script>
+      
+document.addEventListener("DOMContentLoaded", function() {
+   const registrationForm = document.getElementById("registrationForm");
+
+   registrationForm.addEventListener("submit", function(event) {
+       if (!validateRegistrationForm()) {
+           event.preventDefault();
+       }
+   });
+
+   function validateRegistrationForm() {
+       const username = document.getElementById("username").value.trim();
+       const email = document.getElementById("email").value.trim();
+       const password = document.getElementById("password").value.trim();
+
+       if (username === "" || password === "") {
+           alert("Please fill in all fields.");
+           return false;
+       }
+
+       // Add more advanced validation logic here if needed
+
+       return true;
+   }
+});
+    </script>
+         
+</body>
+</html>
