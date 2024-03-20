@@ -71,19 +71,19 @@ if(isset($_POST['login'])) {
         // Store the user's role in a session variable
         $_SESSION['ROLE'] = $row['role'];
         if( $_SESSION['ROLE'] == 'admin') {
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['username'] = $_POST['username'];
             header('location: dashboard.php');
                  
         }else if($_SESSION['ROLE'] == 'user') {
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['username'] = $_POST['username'];
             header('location: dashboard.php');
             
         }elseif($_SESSION['ROLE'] == 'mananger') {
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['username'] = $_POST['username'];
             header('location: dashboard.php');
 
         }else if($_SESSION['ROLE'] == 'staff') {
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['username'] = $_POST['username'];
             header('location: dashboard.php');
            
 

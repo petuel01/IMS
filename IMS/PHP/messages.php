@@ -59,10 +59,17 @@ if(!isset($_SESSION['ROLE'])) {
 
         }
         .mess{
-            background-color: blue;
-            color: white;
-            width: 100%;
             border-radius: 15px;
+            background: #042331;
+            color: whitesmoke;
+            height: 2rem;
+            text-align: center;
+
+        }
+        p{
+            font-family: verdana;
+            margin: .4rem;
+            padding: .3rem;
         }
     </style>
 </head>
@@ -144,8 +151,8 @@ if(!isset($_SESSION['ROLE'])) {
             while($row = mysqli_fetch_assoc($sql)) {
                 ?>
            <div class="mess-box">
-            <p class="mess"><?php echo $row['message'] ?></p>
-            <span class="sender"><?php echo $row['sender'] ?></span>
+            <p class="mess"><span class="sender"><?php echo $row['sender'] ?></span>:: <?php echo $row['message'] ?></p>
+            
          </div>
                 <?php
 
@@ -157,7 +164,7 @@ if(!isset($_SESSION['ROLE'])) {
         </div>
         <div class="message_send">
             <form method="post">
-            <input type="text" placeholder="enter message" name="message">
+            <input type="text" placeholder="enter your message here......" name="message">
             <button type="submit" class="send" name="send">send</button>
             </form>
             <?php
@@ -170,6 +177,7 @@ if(!isset($_SESSION['ROLE'])) {
              $sql = mysqli_query($conn, "INSERT INTO messages (message, sender) VALUES ('$message', '$name')") or die(mysqli_error($conn));
              if($sql){
                 $message[] = 'message sent successfully';
+                header('location: messages.php');
              }else{
                 $message[] = 'something went wrong';
              }
